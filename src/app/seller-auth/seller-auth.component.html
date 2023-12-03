@@ -1,0 +1,44 @@
+<div class="seller-auth">
+
+<!--  SIGN UP SELLER-->
+
+  <div class="signup" *ngIf="!showLogin">
+    <h1>Seller Sign-Up</h1>
+    <form #sellerSignUp="ngForm" (ngSubmit)="signUp(sellerSignUp.value)" class="common-form">
+<!--      <input class="form-input" type="text" ngModel name="name" placeholder="Enter Name">-->
+<!--      <input class="form-input" type="email" ngModel name="email" placeholder="Enter Email">-->
+<!--      <input class="form-input" type="password" ngModel name="password" placeholder="Enter Password">-->
+      <mat-form-field appearance="outline" >
+        <mat-label>Name</mat-label>
+        <input matInput placeholder="Enter Your Name"  ngModel name="name" >
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
+        <input matInput placeholder="Enter Your Email"  ngModel name="email">
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Password</mat-label>
+        <input matInput placeholder="Enter Your Password"  ngModel name="pass">
+      </mat-form-field>
+
+      <button class="form-button">Sign Up</button>
+      <br>.
+      <a (click)="openLogin()">Already have account ? Click here !</a>
+
+    </form>
+
+  </div>
+
+<!--LOGIN SELLER-->
+
+  <div class="login" *ngIf="showLogin">
+    <h1>Seller Login</h1>
+    <form #sellerLogin="ngForm" (ngSubmit)="login(sellerLogin.value)" class="common-form">
+      <input  class="form-input" type="email" ngModel name="email" placeholder="Enter Email" id="name">
+      <input class="form-input" type="password" ngModel name="password" placeholder="Enter Password">
+      <button class="form-button">Login</button>
+      <br>
+      <a (click)="openSignUp()">Don't have account ? Sign Up !</a>
+    </form>
+  </div>
+</div>

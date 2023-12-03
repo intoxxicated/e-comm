@@ -1,0 +1,29 @@
+{
+  "seller": [
+    {
+      "name": "Ankita",
+      "email": "xyz@gmail.com",
+      "password": "1234567890",
+      "id": 1
+    },
+    {
+      "name": "Ankita Jaiswal",
+      "email": "qwe",
+      "password": "qwe",
+      "id": 2
+    },
+    {
+      "name": "qwe",
+      "email": "qwe",
+      "password": "qwe",
+      "id": 3
+    },
+    {
+      "name": "qwe",
+      "email": "qwe",
+      "password": "qwe",
+      "address": "qwe",
+      "id": 4
+    }
+  ]
+}
