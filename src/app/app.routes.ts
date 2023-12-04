@@ -4,6 +4,7 @@ import {SellerAuthComponent} from "./seller-auth/seller-auth.component";
 import {WildCardComponent} from "./wild-card/wild-card.component";
 import {SellerHomeComponent} from "./seller-home/seller-home.component";
 import {authGuard} from "./auth.guard";
+import {SellerAddProductComponent} from "./seller-add-product/seller-add-product.component";
 
 export const routes: Routes = [
   {
@@ -19,9 +20,14 @@ export const routes: Routes = [
     component:SellerHomeComponent,
     canActivate:[authGuard]
   },
+  {
+    path:'seller-add-product',
+    component:SellerAddProductComponent,
+    canActivate:[authGuard]
+
+  },
   { path: '**',
     component:WildCardComponent
   },
-
 
 ];

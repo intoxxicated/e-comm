@@ -32,6 +32,7 @@ export class SellerAuthComponent implements OnInit{
     console.warn(data)
     this.sellerService.userSignUp(data);
 
+
   }
   openLogin(){
 
@@ -48,7 +49,6 @@ export class SellerAuthComponent implements OnInit{
       if(error){
         this.authError='Email or Password is incorrect !!';
       }
-
     })
 
   }

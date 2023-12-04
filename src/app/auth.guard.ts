@@ -3,7 +3,6 @@ import {SellerAuthService} from "./services/seller-auth.service";
 
 export const authGuard: CanActivateFn = (route, state) => {
 
-  // sellerAuthService=new SellerAuthService();
   if(localStorage.getItem('seller')){
     return true;
   }

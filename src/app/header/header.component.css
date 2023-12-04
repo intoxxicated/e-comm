@@ -42,4 +42,13 @@
 .nav li a{
   text-decoration: none;
   color: darkblue;
+  cursor: pointer;
+}
+h1 a{
+  color:darkblue;;
+  text-decoration: none;
+}
+mat-icon
+{
+  font-size: 20px;
 }
