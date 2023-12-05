@@ -1,56 +1,118 @@
+<!--<div class="add-product">-->
+<!--  <h1>Add New Product</h1>-->
+<!--  <p class="message-p">{{productMessage}}</p>-->
+<!--  <form #addProduct="ngForm"-->
+<!--        (ngSubmit)="submit(addProduct.value)"-->
+<!--        class="common-form">-->
+<!--    <input-->
+<!--      type="text"-->
+<!--      class="form-input"-->
+<!--      placeholder="Enter Product Name"-->
+<!--      name="name"-->
+<!--      ngModel-->
+<!--    />-->
+<!--    <input-->
+<!--      type="text"-->
+<!--      class="form-input"-->
+<!--      placeholder="Enter Product Price"-->
+<!--      name="price"-->
+<!--      ngModel-->
+<!--    />-->
+<!--    <input-->
+<!--      type="text"-->
+<!--      class="form-input"-->
+<!--      placeholder="Enter Product Category"-->
+<!--      name="category"-->
+<!--      ngModel-->
+<!--    />-->
+<!--    <input-->
+<!--      type="text"-->
+<!--      class="form-input"-->
+<!--      placeholder="Enter Product Color"-->
+<!--      name="color"-->
+<!--      ngModel-->
+<!--    />-->
+<!--    <textarea-->
+<!--      type="text"-->
+<!--      class="form-input"-->
+<!--      placeholder="Enter Product Description"-->
+<!--      name="description"-->
+<!--      ngModel-->
+<!--    ></textarea>-->
+
+<!--    <input-->
+<!--      type="text"-->
+<!--      class="form-input"-->
+<!--      placeholder="Enter Product Image URL"-->
+<!--      name="image"-->
+<!--      ngModel-->
+<!--    />-->
+<!--    <button class="form-button">Add Product</button>-->
+
+<!--  </form>-->
+<!--</div>-->
+
+
+
+
+
+
 <div class="add-product">
-  <h1>Add New Product</h1>
-  <p class="message-p">{{productMessage}}</p>
-  <form #addProduct="ngForm"
-        (ngSubmit)="submit(addProduct.value)"
-        class="common-form">
-    <input
-      type="text"
-      class="form-input"
-      placeholder="Enter Product Name"
-      name="name"
-      ngModel
-    />
-    <input
-      type="text"
-      class="form-input"
-      placeholder="Enter Product Price"
-      name="price"
-      ngModel
-    />
-    <input
-      type="text"
-      class="form-input"
-      placeholder="Enter Product Category"
-      name="category"
-      ngModel
-    />
-    <input
-      type="text"
-      class="form-input"
-      placeholder="Enter Product Color"
-      name="color"
-      ngModel
-    />
-    <textarea
-      type="text"
-      class="form-input"
-      placeholder="Enter Product Description"
-      name="description"
-      ngModel
-    ></textarea>
+  <h1 style="text-align: center">Add Product</h1>
+  <p class="message-p">{{ productMessage }}</p>
+  <br>
 
-    <input
-      type="text"
-      class="form-input"
-      placeholder="Enter Product Image URL"
-      name="image"
-      ngModel
-    />
-    <button class="form-button">Add Product</button>
+  <form #addProduct="ngForm" (ngSubmit)="submit(addProduct.value)" class="common-form">
+    <mat-form-field appearance="outline">
+      <mat-label>Name</mat-label>
+      <input
+        matInput
+        placeholder="Enter Product Name"
+        name="name"
+        ngModel
+      />
+    </mat-form-field>
 
+    <mat-form-field appearance="outline">
+      <input
+        matInput
+        placeholder="Enter Product Price"
+        name="price"
+        ngModel      />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <input
+        matInput
+        placeholder="Enter Product Category"
+        name="category"
+        ngModel      />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <input
+        matInput
+        placeholder="Enter Product Color"
+        name="color"
+        ngModel      />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <textarea
+        matInput
+        placeholder="Enter Product Description"
+        name="description"
+        ngModel      ></textarea>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <input
+        matInput
+        placeholder="Enter Product Image URL"
+        name="image"
+        ngModel      />
+    </mat-form-field>
+
+    <button mat-raised-button color="primary">Add Product</button>
   </form>
 </div>
-
-
-

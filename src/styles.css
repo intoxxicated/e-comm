@@ -1,4 +1,7 @@
 @import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+/*@import 'tailwindcss/base';*/
+/*@import 'tailwindcss/components';*/
+/*@import 'tailwindcss/utilities';*/
 
 body{
   font-family: sans-serif;

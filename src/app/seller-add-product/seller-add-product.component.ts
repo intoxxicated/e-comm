@@ -1,21 +1,28 @@
-import {Component, OnInit} from '@angular/core';
-import {FormControl, FormsModule} from "@angular/forms";
+import {Component, OnInit, ViewChild} from '@angular/core';
+import {FormControl, FormsModule, NgForm} from "@angular/forms";
 import {SellerProductService} from "../services/seller-product.service";
 import {Product} from "../data-types";
 import {MatTableModule} from "@angular/material/table";
+import {MatButtonModule} from "@angular/material/button";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatInputModule} from "@angular/material/input";
 
 @Component({
   selector: 'app-seller-add-product',
   standalone:true,
-  imports: [
-    FormsModule,
-    MatTableModule
-  ],
+    imports: [
+        FormsModule,
+        MatTableModule,
+        MatButtonModule,
+        MatFormFieldModule,
+        MatInputModule
+    ],
   templateUrl: './seller-add-product.component.html',
   styleUrl: './seller-add-product.component.css',
   providers:[SellerProductService]
 })
 export class SellerAddProductComponent  implements OnInit{
+  @ViewChild('addProduct') addProduct!: NgForm;
   productMessage:string|undefined;
   submit(data:Product){
     this.sellerProduct.addProduct(data).subscribe((result:any)=>{
@@ -23,6 +30,8 @@ export class SellerAddProductComponent  implements OnInit{
         this.productMessage="Product is successfully Added"
       }
       setTimeout(()=>this.productMessage=undefined,3000);
+      this.addProduct.resetForm();
+
 
     })
 

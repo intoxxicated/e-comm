@@ -3,13 +3,19 @@ import {FormsModule} from "@angular/forms";
 import {ActivatedRoute, Router} from "@angular/router";
 import {SellerProductService} from "../services/seller-product.service";
 import {Product} from "../data-types";
+import {MatInputModule} from "@angular/material/input";
+import {MatCardModule} from "@angular/material/card";
+import {MatButtonModule} from "@angular/material/button";
 
 @Component({
   selector: 'app-seller-update-product',
   standalone: true,
-    imports: [
-        FormsModule
-    ],
+  imports: [
+    FormsModule,
+    MatInputModule,
+    MatCardModule,
+    MatButtonModule
+  ],
   templateUrl: './seller-update-product.component.html',
   styleUrl: './seller-update-product.component.css',
   providers:[SellerProductService]

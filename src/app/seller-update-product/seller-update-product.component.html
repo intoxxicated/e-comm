@@ -1,58 +1,122 @@
+<!--<div class="add-product">-->
+<!--  <h1 style="text-align: center">Update Product</h1>-->
+<!--  <p class="message-p">{{productMessage}}</p>-->
+<!--  <br>-->
+<!--  <form #addProduct="ngForm"-->
+<!--        (ngSubmit)="submit(addProduct.value)"-->
+<!--        class="common-form">-->
+<!--    <input-->
+<!--      type="text"-->
+<!--      class="form-input"-->
+<!--      placeholder="Enter Product Name"-->
+<!--      name="name"-->
+<!--      ngModel="{{productData?.name}}"-->
+<!--    />-->
+<!--    <input-->
+<!--      type="text"-->
+<!--      class="form-input"-->
+<!--      placeholder="Enter Product Price"-->
+<!--      name="price"-->
+<!--      ngModel="{{productData?.price}}"-->
+<!--    />-->
+<!--    <input-->
+<!--      type="text"-->
+<!--      class="form-input"-->
+<!--      placeholder="Enter Product Category"-->
+<!--      name="category"-->
+<!--      ngModel="{{productData?.category}}"-->
+<!--    />-->
+<!--    <input-->
+<!--      type="text"-->
+<!--      class="form-input"-->
+<!--      placeholder="Enter Product Color"-->
+<!--      name="color"-->
+<!--      ngModel="{{productData?.color}}"-->
+
+<!--    />-->
+<!--    <textarea-->
+<!--      type="text"-->
+<!--      class="form-input"-->
+<!--      placeholder="Enter Product Description"-->
+<!--      name="description"-->
+<!--      ngModel="{{productData?.description}}"-->
+<!--    ></textarea>-->
+
+<!--    <input-->
+<!--      type="text"-->
+<!--      class="form-input"-->
+<!--      placeholder="Enter Product Image URL"-->
+<!--      name="image"-->
+<!--      ngModel="{{productData?.image}}"-->
+<!--    />-->
+<!--    <button class="form-button">Update Product</button>-->
+
+<!--  </form>-->
+<!--</div>-->
+
+
+
 <div class="add-product">
   <h1 style="text-align: center">Update Product</h1>
-  <p class="message-p">{{productMessage}}</p>
+  <p class="message-p">{{ productMessage }}</p>
   <br>
-  <form #addProduct="ngForm"
-        (ngSubmit)="submit(addProduct.value)"
-        class="common-form">
-    <input
-      type="text"
-      class="form-input"
-      placeholder="Enter Product Name"
-      name="name"
-      ngModel="{{productData?.name}}"
-    />
-    <input
-      type="text"
-      class="form-input"
-      placeholder="Enter Product Price"
-      name="price"
-      ngModel="{{productData?.price}}"
-    />
-    <input
-      type="text"
-      class="form-input"
-      placeholder="Enter Product Category"
-      name="category"
-      ngModel="{{productData?.category}}"
-    />
-    <input
-      type="text"
-      class="form-input"
-      placeholder="Enter Product Color"
-      name="color"
-      ngModel="{{productData?.color}}"
 
-    />
-    <textarea
-      type="text"
-      class="form-input"
-      placeholder="Enter Product Description"
-      name="description"
-      ngModel="{{productData?.description}}"
-    ></textarea>
+  <form #addProduct="ngForm" (ngSubmit)="submit(addProduct.value)" class="common-form">
+    <mat-form-field appearance="outline">
+      <mat-label>Name</mat-label>
+      <input
+        matInput
+        placeholder="Enter Product Name"
+        name="name"
+        ngModel="{{productData?.name}}"
+      />
+    </mat-form-field>
 
-    <input
-      type="text"
-      class="form-input"
-      placeholder="Enter Product Image URL"
-      name="image"
-      ngModel="{{productData?.image}}"
-    />
-    <button class="form-button">Update Product</button>
+    <mat-form-field appearance="outline">
+      <input
+        matInput
+        placeholder="Enter Product Price"
+        name="price"
+        ngModel="{{productData?.price}}"
+      />
+    </mat-form-field>
 
+    <mat-form-field appearance="outline">
+      <input
+        matInput
+        placeholder="Enter Product Category"
+        name="category"
+        ngModel="{{productData?.category}}"
+      />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <input
+        matInput
+        placeholder="Enter Product Color"
+        name="color"
+        ngModel="{{productData?.color}}"
+      />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <textarea
+        matInput
+        placeholder="Enter Product Description"
+        name="description"
+        ngModel="{{productData?.description}}"
+      ></textarea>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <input
+        matInput
+        placeholder="Enter Product Image URL"
+        name="image"
+        ngModel="{{productData?.image}}"
+      />
+    </mat-form-field>
+
+    <button mat-raised-button color="primary">Update Product</button>
   </form>
 </div>
-
-
-

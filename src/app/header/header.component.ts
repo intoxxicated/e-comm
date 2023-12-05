@@ -7,6 +7,10 @@ import {MatDialog} from "@angular/material/dialog";
 import {TermsConditionComponent} from "../terms-condition/terms-condition.component";
 import {SellerProductService} from "../services/seller-product.service";
 import {Product} from "../data-types";
+import {
+  SellerProductDeleteDialogComponent
+} from "../seller-product-delete-dialog/seller-product-delete-dialog.component";
+import {SellerLogoutDialogComponent} from "../seller-logout-dialog/seller-logout-dialog.component";
 
 @Component({
   selector: 'app-header',
@@ -52,8 +56,16 @@ export class HeaderComponent implements OnInit{
     })
   }
   logout(){
-    localStorage.removeItem('seller');
-    this.route.navigate(['/']);
+    const dialogRef=this.dialog.open(SellerLogoutDialogComponent,{
+      width:'400px'
+    })
+    dialogRef.afterClosed().subscribe((res)=>{
+      if(res==='Yes'){
+        localStorage.removeItem('seller');
+        this.route.navigate(['/']);
+      }
+    })
+
 
   }
   openTnC(){
