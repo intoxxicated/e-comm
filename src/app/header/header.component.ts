@@ -1,7 +1,12 @@
 import {Component, OnInit} from '@angular/core';
 import {Router, RouterLink, RouterOutlet} from "@angular/router";
-import {NgIf, NgSwitch, NgSwitchCase, TitleCasePipe, UpperCasePipe} from "@angular/common";
+import {NgForOf, NgIf, NgSwitch, NgSwitchCase, TitleCasePipe, UpperCasePipe} from "@angular/common";
 import {MatIconModule} from "@angular/material/icon";
+import {MatInputModule} from "@angular/material/input";
+import {MatDialog} from "@angular/material/dialog";
+import {TermsConditionComponent} from "../terms-condition/terms-condition.component";
+import {SellerProductService} from "../services/seller-product.service";
+import {Product} from "../data-types";
 
 @Component({
   selector: 'app-header',
@@ -14,15 +19,19 @@ import {MatIconModule} from "@angular/material/icon";
     NgSwitchCase,
     UpperCasePipe,
     TitleCasePipe,
-    MatIconModule
+    MatIconModule,
+    MatInputModule,
+    NgForOf
   ],
   templateUrl: './header.component.html',
-  styleUrl: './header.component.css'
+  styleUrl: './header.component.css',
+  providers:[SellerProductService]
 })
 export class HeaderComponent implements OnInit{
  menuType="default";
  sellerName="";
-  constructor(private route:Router) {
+ searchResult:undefined|Product[];
+  constructor(private route:Router,public dialog: MatDialog,private product:SellerProductService) {
   }
 
   ngOnInit(): void {
@@ -35,11 +44,9 @@ export class HeaderComponent implements OnInit{
             let sellerData=sellerDataStore && JSON.parse(sellerDataStore)[0];
             this.sellerName=sellerData.name;
           }
-          console.warn(this.menuType);
         }
         else {
           this.menuType="default";
-          console.warn(this.menuType);
         }
       }
     })
@@ -49,5 +56,27 @@ export class HeaderComponent implements OnInit{
     this.route.navigate(['/']);
 
   }
+  openTnC(){
+    const dialogRef = this.dialog.open(TermsConditionComponent);
 
+  }
+
+  searchProduct(query: KeyboardEvent) {
+    if(query){
+      const elements=query.target as HTMLInputElement;
+      this.product.searchProduct(elements.value).subscribe((result)=>
+      {
+        if(result.length>5){
+          result.length=5;
+        }
+
+        this.searchResult=result;
+      })
+    }
+
+  }
+
+    hideSearch() {
+        this.searchResult=undefined;
+    }
 }

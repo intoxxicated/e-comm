@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import {HeaderComponent} from "./header/header.component";
 import {HttpClientModule} from "@angular/common/http";
-import {SellerAuthService} from "./services/seller-auth.service";
 
 @Component({
   selector: 'app-root',

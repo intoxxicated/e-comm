@@ -52,3 +52,20 @@ mat-icon
 {
   font-size: 20px;
 }
+.suggested-result{
+  position: absolute;
+  display: list-item !important;
+  z-index: 10;
+  background-color: white;
+  width: 310px;
+  top: 40px;
+  border: 1px solid #ddd;
+}
+.suggested-result li{
+  border: 1px solid #ddd;
+  padding: 5px;
+}
+.suggested-result li a{
+  cursor: pointer;
+  color: darkblue;
+}
