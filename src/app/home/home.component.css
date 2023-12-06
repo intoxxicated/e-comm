@@ -10,8 +10,9 @@
   border: 1px solid #ccc;
 }
 
-.product-item img{
+.product-item a img{
   width: 100%;
+  cursor: pointer;
   height: 300px;
   object-fit: contain;
 }
@@ -35,3 +36,16 @@
   justify-content: space-between;
   padding: 10px;
 }
+.product-item .product-footer a{
+  color: darkblue;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+
+}
+/*.product-item .product-footer a:visited{*/
+/*  color: purple;*/
+/*  font-weight: 100;*/
+/*}*/
+/*.product-item .product-footer a:hover{*/
+/*}*/

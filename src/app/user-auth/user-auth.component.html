@@ -1,0 +1,54 @@
+<div class="seller-auth">
+
+    <!--  SIGN UP SELLER-->
+
+    <div class="signup" >
+        <h1>Sign-Up</h1>
+        <form #userSignUp="ngForm" (ngSubmit)="signUp(userSignUp.value)" class="common-form">
+            <!--      <input class="form-input" type="text" ngModel name="name" placeholder="Enter Name">-->
+            <!--      <input class="form-input" type="email" ngModel name="email" placeholder="Enter Email">-->
+            <!--      <input class="form-input" type="password" ngModel name="password" placeholder="Enter Password">-->
+            <mat-form-field appearance="outline" >
+                <mat-label>Name</mat-label>
+                <input matInput placeholder="Enter Your Name"  ngModel name="name" >
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Email</mat-label>
+                <input matInput placeholder="Enter Your Email"  ngModel name="email">
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Password</mat-label>
+                <input matInput placeholder="Enter Your Password"  ngModel name="pass" type="password" >
+            </mat-form-field>
+
+            <button class="form-button">Sign Up</button>
+            <br>.
+            <a (click)="openLogin()">Already have account ? Click here !</a>
+
+        </form>
+
+    </div>
+
+<!--    &lt;!&ndash;LOGIN SELLER&ndash;&gt;-->
+
+<!--    <div class="login" *ngIf="showLogin">-->
+<!--        <h1>Seller Login</h1>-->
+<!--        <form #userLogin="ngForm" (ngSubmit)="login(userLogin.value)" class="common-form">-->
+<!--            &lt;!&ndash;      <input  class="form-input" type="email" ngModel name="email" placeholder="Enter Email" id="name">&ndash;&gt;-->
+<!--            &lt;!&ndash;      <input class="form-input" type="password" ngModel name="password" placeholder="Enter Password">&ndash;&gt;-->
+<!--            <p style="color: red; font-style: italic">{{authError}}</p>-->
+<!--            <br>-->
+<!--            <mat-form-field appearance="outline" >-->
+<!--                <mat-label>Email</mat-label>-->
+<!--                <input matInput placeholder="Enter Your Email"  ngModel name="email" >-->
+<!--            </mat-form-field>-->
+<!--            <mat-form-field appearance="outline">-->
+<!--                <mat-label>Password</mat-label>-->
+<!--                <input matInput placeholder="Enter Your Password"  ngModel name="password">-->
+<!--            </mat-form-field>-->
+<!--            <button class="form-button">Login</button>-->
+<!--            <br>-->
+<!--            <a (click)="openSignUp()">Don't have account ? Sign Up !</a>-->
+<!--        </form>-->
+<!--    </div>-->
+</div>

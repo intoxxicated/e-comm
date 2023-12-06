@@ -11,6 +11,9 @@ import {
   SellerProductDeleteDialogComponent
 } from "../seller-product-delete-dialog/seller-product-delete-dialog.component";
 import {SellerLogoutDialogComponent} from "../seller-logout-dialog/seller-logout-dialog.component";
+import {FooterComponent} from "../footer/footer.component";
+import {MatButtonModule} from "@angular/material/button";
+import {MatChipsModule} from "@angular/material/chips";
 
 @Component({
   selector: 'app-header',
@@ -25,7 +28,10 @@ import {SellerLogoutDialogComponent} from "../seller-logout-dialog/seller-logout
     TitleCasePipe,
     MatIconModule,
     MatInputModule,
-    NgForOf
+    NgForOf,
+    FooterComponent,
+    MatButtonModule,
+    MatChipsModule
   ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css',
@@ -68,10 +74,7 @@ export class HeaderComponent implements OnInit{
 
 
   }
-  openTnC(){
-    const dialogRef = this.dialog.open(TermsConditionComponent);
 
-  }
 
   searchProduct(query: KeyboardEvent) {
     if(query){
@@ -90,5 +93,18 @@ export class HeaderComponent implements OnInit{
 
     hideSearch() {
         this.searchResult=undefined;
+    }
+
+  submitSearch(val: string) {
+    console.warn(val)
+    this.route.navigate([`search/${val}`])
+  }
+  openTnC(){
+    const dialogRef = this.dialog.open(TermsConditionComponent);
+
+  }
+
+    redirectToDetail(id:number) {
+        this.route.navigate(['/details/'+id])
     }
 }

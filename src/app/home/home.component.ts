@@ -5,18 +5,20 @@ import {Product} from "../data-types";
 import {NgbCarousel, NgbSlide} from "@ng-bootstrap/ng-bootstrap";
 import {NgForOf, NgIf} from "@angular/common";
 import {MatIconModule} from "@angular/material/icon";
+import {RouterLink} from "@angular/router";
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [
-    MatTableModule,
-    NgbCarousel,
-    NgbSlide,
-    NgForOf,
-    NgIf,
-    MatIconModule
-  ],
+    imports: [
+        MatTableModule,
+        NgbCarousel,
+        NgbSlide,
+        NgForOf,
+        NgIf,
+        MatIconModule,
+        RouterLink
+    ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
   providers:[SellerProductService]
