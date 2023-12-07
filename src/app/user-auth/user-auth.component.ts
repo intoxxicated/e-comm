@@ -3,9 +3,10 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
 import {NgIf} from "@angular/common";
-import {LoginType, SignUpType} from "../data-types";
+import {cart, LoginType, Product, SignUpType} from "../data-types";
 import {UserService} from "../services/user.service";
 import {MatButtonModule} from "@angular/material/button";
+import {SellerProductService} from "../services/seller-product.service";
 
 @Component({
   selector: 'app-user-auth',
@@ -20,13 +21,13 @@ import {MatButtonModule} from "@angular/material/button";
   ],
   templateUrl: './user-auth.component.html',
   styleUrl: './user-auth.component.css',
-  providers:[UserService]
+  providers:[UserService,SellerProductService]
 })
 export class UserAuthComponent  implements OnInit{
     showLogin=false;
     authError: any;
 
-    constructor( private user:UserService) {
+    constructor( private user:UserService,private product:SellerProductService) {
     }
 
   ngOnInit(): void {
@@ -48,6 +49,9 @@ export class UserAuthComponent  implements OnInit{
           this.authError='Email or Password is incorrect !!';
 
         }
+        else{
+          this.localCartToRemoteCart();
+        }
       })
 
     }
@@ -56,4 +60,36 @@ export class UserAuthComponent  implements OnInit{
       this.showLogin=false;
 
     }
+  localCartToRemoteCart(){
+    let data = localStorage.getItem('localCart');
+    let user = localStorage.getItem('user');
+    let userId= user && JSON.parse(user).id;
+    if(data){
+      let cartDataList:Product[]= JSON.parse(data);
+
+      cartDataList.forEach((product:Product, index)=>{
+        let cartData:cart={
+          ...product,
+          productId:product.id,
+          userId
+        }
+        delete cartData.id;
+        setTimeout(() => {
+          this.product.addToCart(cartData).subscribe((result)=>{
+            if(result){
+              console.warn("data is stored in DB");
+            }
+          })
+        }, 500);
+        if(cartDataList.length===index+1){
+          localStorage.removeItem('localCart')
+        }
+      })
+    }
+
+    setTimeout(() => {
+      this.product.getCartList(userId)
+    }, 2000);
+
+  }
 }

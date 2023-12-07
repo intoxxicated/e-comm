@@ -9,9 +9,9 @@
             <div>Color :<h4 [style.background-color]="productData.color"  class="product-color"></h4></div>
             <h5>Category : {{productData.category}}</h5>
             <h5>Description : {{productData.description}}</h5>
-            <button mat-raised-button style="border:2px solid cadetblue;" >Buy Now</button>
-            <button mat-raised-button color="warn" >Remove from Cart</button>
-            <button  mat-raised-button style="background-color: cadetblue;color: white">Add to Cart</button>
+            <button  mat-raised-button style="border:2px solid cadetblue;" >Buy Now</button>
+            <button *ngIf="removeCart" (click)="removeToCart(productData.id)" mat-raised-button color="warn" >Remove from Cart</button>
+            <button (click)="addToCart()" *ngIf="!removeCart" mat-raised-button style="background-color: cadetblue;color: white">Add to Cart</button>
             <div class="quantity-group">
                 <button mat-raised-button (click)="handleQuantity('min')" style="border:2px solid cadetblue;font-weight: bold" >-</button>
                 <input type="text" value="{{productQuantity}}"  />

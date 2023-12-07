@@ -42,6 +42,7 @@ export class HeaderComponent implements OnInit{
  sellerName="";
  searchResult:undefined|Product[];
  userName= "";
+ cartItems=0;
   constructor(private route:Router,public dialog: MatDialog,private product:SellerProductService) {
   }
 
@@ -69,6 +70,14 @@ export class HeaderComponent implements OnInit{
           this.menuType="default";
         }
       }
+    });
+    let cartData=localStorage.getItem('localCart')
+    if(cartData)
+    {
+      this.cartItems=JSON.parse(cartData).length
+    }
+    this.product.cartData.subscribe((items)=>{
+      this.cartItems=items.length
     })
   }
   logout(){
@@ -94,6 +103,11 @@ export class HeaderComponent implements OnInit{
         if(result.length>5){
           result.length=5;
         }
+        if(result.length<1){
+          this.route.navigate(['no-search'])
+
+        }
+
 
         this.searchResult=result;
       })
