@@ -4,6 +4,7 @@
 
   <div class="signup" *ngIf="!showLogin">
     <h1>Seller Sign-Up</h1>
+    <img src="assets/signingup.png" style="height:300px">
     <form #sellerSignUp="ngForm" (ngSubmit)="signUp(sellerSignUp.value)" class="common-form">
 
       <mat-form-field appearance="outline" >
@@ -36,6 +37,7 @@
 
   <div class="login" *ngIf="showLogin">
     <h1>Seller Login</h1>
+    <img src="assets/signing.png" style="height:300px">
     <form #sellerLogin="ngForm" (ngSubmit)="login(sellerLogin.value)" class="common-form">
       <p style="color: red; font-style: italic">{{authError}}</p>
       <br>
