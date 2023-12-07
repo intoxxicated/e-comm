@@ -35,18 +35,15 @@ export class SellerAuthService {
 
   userLogin(data:LoginType)
   {
-    this.http.get(`http://localhost:3000/seller?email=${data.email}&password=${data.password}`,
+    this.http.get(`http://localhost:3000/seller?email=${data.email}&pass=${data.password}`,
       {observe:'response'}
     ).subscribe((result:any)=>{
-      console.warn(result)
       if (result && result.body && result.body.length){
-        console.warn("user logged in")
         localStorage.setItem('seller',JSON.stringify(result.body))
         this.router.navigate(['seller-home']);
 
       }
       else{
-        console.warn("user login failed !!");
         this.isLoginError.emit(true);
 
       }

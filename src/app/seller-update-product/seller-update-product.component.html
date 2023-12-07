@@ -57,11 +57,11 @@
 
 
 <div class="add-product">
-  <h1 style="text-align: center">Update Product</h1>
+  <h1 style="text-align: center;margin-top: 30px">Update Product</h1>
   <p class="message-p">{{ productMessage }}</p>
+  <mat-spinner *ngIf="spinner" style="margin:0 auto; height: 30px"></mat-spinner>
   <br>
-
-  <form #addProduct="ngForm" (ngSubmit)="submit(addProduct.value)" class="common-form">
+  <form #addProduct="ngForm" (ngSubmit)="submit(addProduct.value)"  class="common-form">
     <mat-form-field appearance="outline">
       <mat-label>Name</mat-label>
       <input
@@ -69,54 +69,81 @@
         placeholder="Enter Product Name"
         name="name"
         ngModel="{{productData?.name}}"
+        #name="ngModel" required
       />
+      <mat-error *ngIf="name.invalid"> Enter the product Category</mat-error>
+
     </mat-form-field>
 
     <mat-form-field appearance="outline">
+      <mat-label>Price</mat-label>
+
       <input
         matInput
         placeholder="Enter Product Price"
         name="price"
         ngModel="{{productData?.price}}"
+        #price="ngModel" required
       />
+      <mat-error *ngIf="price.invalid"> Enter the product Price</mat-error>
+
     </mat-form-field>
 
     <mat-form-field appearance="outline">
+      <mat-label>Category</mat-label>
+
       <input
         matInput
         placeholder="Enter Product Category"
         name="category"
         ngModel="{{productData?.category}}"
+        #category="ngModel" required
       />
+      <mat-error *ngIf="category.invalid"> Enter the product Category</mat-error>
+
     </mat-form-field>
 
     <mat-form-field appearance="outline">
+      <mat-label>Color</mat-label>
+
       <input
         matInput
         placeholder="Enter Product Color"
         name="color"
         ngModel="{{productData?.color}}"
+
       />
+
     </mat-form-field>
 
     <mat-form-field appearance="outline">
+      <mat-label>Description</mat-label>
+
       <textarea
         matInput
         placeholder="Enter Product Description"
         name="description"
         ngModel="{{productData?.description}}"
+        #description="ngModel" required
       ></textarea>
+      <mat-error *ngIf="description.invalid"> Enter the product Description</mat-error>
+
     </mat-form-field>
 
     <mat-form-field appearance="outline">
+      <mat-label>Image</mat-label>
+
       <input
         matInput
         placeholder="Enter Product Image URL"
         name="image"
         ngModel="{{productData?.image}}"
+        #image="ngModel" required
       />
+      <mat-error *ngIf="image.invalid"> Enter the product image url</mat-error>
+
     </mat-form-field>
 
-    <button mat-raised-button color="primary">Update Product</button>
+    <button [disabled]="addProduct.invalid" mat-raised-button color="primary">Update Product</button>
   </form>
 </div>

@@ -60,6 +60,7 @@
 <div class="add-product">
   <h1 style="text-align: center">Add Product</h1>
   <p class="message-p">{{ productMessage }}</p>
+
   <br>
 
   <form #addProduct="ngForm" (ngSubmit)="submit(addProduct.value)" class="common-form">
@@ -70,49 +71,70 @@
         placeholder="Enter Product Name"
         name="name"
         ngModel
+        #name="ngModel" required
       />
+      <mat-error *ngIf="name.invalid"> Enter name of the product</mat-error>
     </mat-form-field>
 
     <mat-form-field appearance="outline">
+      <mat-label>Price</mat-label>
+
       <input
         matInput
         placeholder="Enter Product Price"
         name="price"
-        ngModel      />
+        ngModel
+      #price="ngModel" required/>
+      <mat-error *ngIf="price.invalid">Enter price of the product</mat-error>
     </mat-form-field>
 
     <mat-form-field appearance="outline">
+      <mat-label>Category</mat-label>
+
       <input
         matInput
         placeholder="Enter Product Category"
         name="category"
-        ngModel      />
+        ngModel
+      #category="ngModel" required
+      />
+      <mat-error *ngIf="category.invalid"> Enter category of the product</mat-error>
     </mat-form-field>
 
     <mat-form-field appearance="outline">
+      <mat-label>Color</mat-label>
+
       <input
         matInput
         placeholder="Enter Product Color"
         name="color"
-        ngModel      />
+        ngModel/>
     </mat-form-field>
 
     <mat-form-field appearance="outline">
+      <mat-label>Description</mat-label>
+
       <textarea
         matInput
         placeholder="Enter Product Description"
         name="description"
-        ngModel      ></textarea>
+        ngModel
+      #description="ngModel" required></textarea>
+      <mat-error *ngIf="description.invalid">Write the product description</mat-error>
     </mat-form-field>
 
     <mat-form-field appearance="outline">
+      <mat-label>Image</mat-label>
+
       <input
         matInput
         placeholder="Enter Product Image URL"
         name="image"
-        ngModel      />
+        ngModel
+      #image="ngModel" required/>
+      <mat-error *ngIf="image.invalid"> Enter the product image url</mat-error>
     </mat-form-field>
 
-    <button mat-raised-button color="primary">Add Product</button>
+    <button [disabled]="addProduct.invalid" mat-raised-button color="primary">Add Product</button>
   </form>
 </div>

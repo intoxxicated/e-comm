@@ -1,6 +1,6 @@
 <nav class="nav">
-  <h1><a routerLink="/">E-COMM</a></h1>
-  <div  *ngIf="menuType==='default'" class="nav-search">
+  <h1><a routerLink="/"><img src="assets/logo.png" style="height: 40px" ></a></h1>
+  <div  *ngIf="menuType==='default'|| 'user'" class="nav-search">
     <input type="text" #searchInput (keyup)="searchProduct($event)" (blur)="hideSearch()" placeholder="search products here"/>
     <button (click)="submitSearch(searchInput.value)"><mat-icon style="font-weight: bold;padding-top: 3px">search</mat-icon></button>
     <ul class="suggested-result" *ngIf="searchResult" >
@@ -14,9 +14,17 @@
       <li><a routerLink="user-auth">Login/Sign-Up</a></li>
       <li><a>Cart(0)</a></li>
       <li><a (click)="openTnC()">T&C</a></li>
-
-
     </ul>
+
+    <ul *ngSwitchCase="'user'">
+      <li><a routerLink="seller-auth">Seller</a></li>
+      <li><a routerLink="/">Home</a></li>
+      <li><a (click)="userLogout()">Logout</a></li>
+      <li><a>Cart(0)</a></li>
+      <li><a style="font-size:20px;cursor: text">{{userName | titlecase}} </a> </li>
+      <li><a (click)="openTnC()">T&C</a></li>
+    </ul>
+
     <ul *ngSwitchCase="'seller'">
       <li><a routerLink="seller-add-product">Add Product</a></li>
       <li><a routerLink="seller-home">List</a></li>

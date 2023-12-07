@@ -6,17 +6,19 @@ import {MatTableModule} from "@angular/material/table";
 import {MatButtonModule} from "@angular/material/button";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
+import {NgIf} from "@angular/common";
 
 @Component({
   selector: 'app-seller-add-product',
   standalone:true,
-    imports: [
-        FormsModule,
-        MatTableModule,
-        MatButtonModule,
-        MatFormFieldModule,
-        MatInputModule
-    ],
+  imports: [
+    FormsModule,
+    MatTableModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule,
+    NgIf
+  ],
   templateUrl: './seller-add-product.component.html',
   styleUrl: './seller-add-product.component.css',
   providers:[SellerProductService]

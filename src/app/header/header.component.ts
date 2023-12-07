@@ -41,6 +41,7 @@ export class HeaderComponent implements OnInit{
  menuType="default";
  sellerName="";
  searchResult:undefined|Product[];
+ userName= "";
   constructor(private route:Router,public dialog: MatDialog,private product:SellerProductService) {
   }
 
@@ -55,6 +56,15 @@ export class HeaderComponent implements OnInit{
             this.sellerName=sellerData.name;
           }
         }
+        else if(localStorage.getItem('user')){
+          this.menuType="user";
+          if(localStorage.getItem('user')){
+            let userDataStore=localStorage.getItem('user')
+            let userData=userDataStore && JSON.parse(userDataStore)[0];
+            this.userName=userData.name;
+          }
+        }
+
         else {
           this.menuType="default";
         }
@@ -96,7 +106,6 @@ export class HeaderComponent implements OnInit{
     }
 
   submitSearch(val: string) {
-    console.warn(val)
     this.route.navigate([`search/${val}`])
   }
   openTnC(){
@@ -106,5 +115,17 @@ export class HeaderComponent implements OnInit{
 
     redirectToDetail(id:number) {
         this.route.navigate(['/details/'+id])
+    }
+    userLogout()
+    {
+      const dialogRef=this.dialog.open(SellerLogoutDialogComponent,{
+        width:'400px'
+      })
+      dialogRef.afterClosed().subscribe((res)=>{
+        if(res==='Yes'){
+          localStorage.removeItem('user');
+          this.route.navigate(['user-auth']);
+        }
+      })
     }
 }

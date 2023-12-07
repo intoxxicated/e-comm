@@ -36,21 +36,27 @@
       "email": "",
       "pass": "",
       "id": 6
+    },
+    {
+      "name": "abc",
+      "email": "abc@gmail.com",
+      "pass": "1234567890",
+      "id": 7
     }
   ],
   "products": [
     {
       "name": "Samsung m 40 a ",
-      "price": "550",
+      "price": "7000",
       "category": "mobile",
-      "color": "white",
+      "color": "green",
       "description": "this is a Samsung product",
       "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcSOO1JDPUNwcPiqzHYhaL_zpJA0Ymlr6mD9sSgTPad_JYdrk-o",
       "id": 3
     },
     {
       "name": "Nike Shoes",
-      "price": "3000",
+      "price": "9000",
       "category": "Shoes",
       "color": "Black",
       "description": "Best shoes for Running",
@@ -245,9 +251,68 @@
       "description": "Smudge proof eyeliner , long-lasting 24x7",
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRELBMCZB_itaX_svqrLFan4IQ6XeknylaDdA&usqp=CAU",
       "id": 12
+    },
+    {
+      "name": "waesrdtyfg",
+      "price": "xweqcrwt",
+      "category": "sersxsrdcty",
+      "color": "xcvb",
+      "description": "edtfyg",
+      "image": "ssdrtf",
+      "id": 13
+    },
+    {
+      "name": "",
+      "price": "",
+      "category": "",
+      "color": "",
+      "description": "",
+      "image": "",
+      "id": 14
+    },
+    {
+      "name": "",
+      "price": "",
+      "category": "",
+      "color": "",
+      "description": "",
+      "image": "",
+      "id": 15
+    },
+    {
+      "name": "",
+      "price": "",
+      "category": "",
+      "color": "",
+      "description": "",
+      "image": "",
+      "id": 16
+    },
+    {
+      "name": "",
+      "price": "",
+      "category": "",
+      "color": "",
+      "description": "",
+      "image": "",
+      "id": 17
+    },
+    {
+      "name": "",
+      "price": "",
+      "category": "",
+      "color": "",
+      "description": "",
+      "image": "",
+      "id": 18
     }
   ],
-  "users": [
-
+  "user": [
+    {
+      "name": "abc",
+      "email": "abc@gmail.com",
+      "pass": "1234567890",
+      "id": 1
+    }
   ]
 }

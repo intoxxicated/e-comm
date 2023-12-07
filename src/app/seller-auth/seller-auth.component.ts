@@ -5,6 +5,7 @@ import {Router} from "@angular/router";
 import {LoginType, SignUpType} from "../data-types";
 import {NgIf} from "@angular/common";
 import {MatInputModule} from "@angular/material/input";
+import {MatButtonModule} from "@angular/material/button";
 
 @Component({
   selector: 'app-seller-auth',
@@ -12,7 +13,8 @@ import {MatInputModule} from "@angular/material/input";
   imports: [
     FormsModule,
     NgIf,
-    MatInputModule
+    MatInputModule,
+    MatButtonModule
   ],
   templateUrl: './seller-auth.component.html',
   styleUrl: './seller-auth.component.css',
@@ -29,7 +31,6 @@ export class SellerAuthComponent implements OnInit{
   }
   signUp(data:SignUpType):void
   {
-    console.warn(data)
     this.sellerService.userSignUp(data);
 
 
