@@ -42,14 +42,26 @@
       "email": "abc@gmail.com",
       "pass": "1234567890",
       "id": 7
+    },
+    {
+      "name": "xa",
+      "email": "xyz@gmail.com",
+      "pass": "Ankita@17",
+      "id": 8
+    },
+    {
+      "name": "abc",
+      "email": "abc@gmail.com",
+      "pass": "1234567890",
+      "id": 9
     }
   ],
   "products": [
     {
       "name": "Samsung m 40 a ",
-      "price": "7000",
+      "price": "4000",
       "category": "mobile",
-      "color": "green",
+      "color": "white",
       "description": "this is a Samsung product",
       "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcSOO1JDPUNwcPiqzHYhaL_zpJA0Ymlr6mD9sSgTPad_JYdrk-o",
       "id": 3
@@ -64,15 +76,6 @@
       "id": 6
     },
     {
-      "name": "Noise Smart Watch",
-      "price": "2000",
-      "category": "Watch",
-      "color": "Black",
-      "description": "Noise smart watch for man and women both",
-      "image": "https://www.reliancedigital.in/medias/Noise-Colorfit-Pro-2-Smart-Watch-491900986-i-1-1200Wx1200H-300Wx300H?context=bWFzdGVyfGltYWdlc3w1MDc0NXxpbWFnZS9qcGVnfGltYWdlcy9oYzkvaDdjLzk1OTE4MjA3NDY3ODIuanBnfDA3MjZlMzkzOTExYzMyNzk5Y2YzOTk0MWFkMjc5YjE5OTlkMDE4NzYzYTg1YzQ2YmNjZjMxYzc5ZDJiYjBlNDg",
-      "id": 8
-    },
-    {
       "name": "Huda Beauty",
       "price": "12000",
       "category": "Beauty",
@@ -251,6 +254,15 @@
       "description": "Smudge proof eyeliner , long-lasting 24x7",
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRELBMCZB_itaX_svqrLFan4IQ6XeknylaDdA&usqp=CAU",
       "id": 12
+    },
+    {
+      "name": "hbmh",
+      "price": "xnbmxz",
+      "category": "mn mnxz",
+      "color": "nb cnbz",
+      "description": "b zn nx",
+      "image": "  zxz x",
+      "id": 13
     }
   ],
   "user": [
